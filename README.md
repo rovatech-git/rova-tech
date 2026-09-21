@@ -1,13 +1,13 @@
 <div align="center">
 
-# 🐾 Rova Tech
+# Rova Tech
 
 ### Pequenas patas. Grandes descobertas.
 
 Um jardim ensolarado, doze peixinhos escondidos e um gato branco muito curioso.
 Um joguinho 3D para jogar no navegador, sem instalar nada e sem pressa.
 
-**[▶️ Jogar agora](https://rovatech-git.github.io/rova-tech/)**
+**[Jogar agora](https://rovatech-git.github.io/rova-tech/)**
 
 <img src="docs/media/gameplay.gif" alt="O gato branco passeando pelo jardim enquanto a câmera gira ao redor do lago" width="720">
 
@@ -15,7 +15,7 @@ Um joguinho 3D para jogar no navegador, sem instalar nada e sem pressa.
 
 ---
 
-## 🌱 O que é
+## O que é
 
 Você cuida de um gatinho branco de olhos azuis num jardim cheio de árvores, flores, um lago com vitórias-régias e peixinhos dourados espalhados pelo caminho de pedras. A missão é simples: **encontrar os 12 peixinhos**. Não tem limite de tempo nem inimigo. É só explorar no seu ritmo.
 
@@ -40,22 +40,22 @@ Funciona no computador e no celular, direto no navegador.
   </tr>
 </table>
 
-## 🎮 Como jogar
+## Como jogar
 
 | Ação | Teclado e mouse | Celular |
 | --- | --- | --- |
 | Andar | <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> ou setas, ou um clique no chão | Setas na tela ou um toque no chão |
 | Pular | <kbd>Espaço</kbd> | Botão **Pular** |
 | Correr | <kbd>Shift</kbd> | — |
-| Miar 🐱 | <kbd>E</kbd> | Botão da patinha |
+| Miar | <kbd>E</kbd> | Botão da patinha |
 | Girar a câmera | Arrastar o mouse | Arrastar o dedo |
 | Zoom | Roda do mouse ou trackpad | — |
 | Restaurar a câmera | <kbd>R</kbd> | Botão no topo |
 | Pausar | <kbd>Esc</kbd> ou <kbd>P</kbd> | Botão no topo |
 
-> 💡 **Dica:** um clique curto move o gato; arrastar só mexe na câmera. O progresso vale para a partida atual e recomeça quando você recarrega a página.
+> **Dica:** um clique curto move o gato; arrastar só mexe na câmera. O progresso vale para a partida atual e recomeça quando você recarrega a página.
 
-## 🛠️ Rodar no seu computador
+## Rodar no seu computador
 
 Você só precisa do [Node.js](https://nodejs.org/) 22.13 ou mais novo.
 
@@ -68,7 +68,7 @@ npx pnpm@11.25.0 dev
 
 Depois abra **http://localhost:5173**. Não precisa de chave de API nem de conta.
 
-## 🧶 Onde mexer
+## Onde mexer
 
 Quer mudar alguma coisa? Estes são os arquivos principais:
 
@@ -86,7 +86,7 @@ Quer mudar alguma coisa? Estes são os arquivos principais:
 
 **Feito com:** React, TypeScript, Three.js e Vite.
 
-## 🚀 Publicação
+## Publicação
 
 Cada `push` na branch `main` publica o jogo automaticamente no GitHub Pages, pelo fluxo [`.github/workflows/github-pages.yml`](.github/workflows/github-pages.yml). Para gerar a versão estática na sua máquina:
 
@@ -95,7 +95,7 @@ npx pnpm@11.25.0 build:pages   # o resultado fica em dist-pages/
 ```
 
 <details>
-<summary><b>✨ Detalhes do visual</b></summary>
+<summary><b>Detalhes do visual</b></summary>
 
 <br>
 
@@ -108,7 +108,7 @@ Com WebGL2, o jogo usa luz ambiente, materiais e sombras. Em aparelhos sem WebGL
 </details>
 
 <details>
-<summary><b>⚡ Câmera e desempenho</b></summary>
+<summary><b>Câmera e desempenho</b></summary>
 
 <br>
 
@@ -121,7 +121,7 @@ Na versão anterior, medida num navegador sem WebGL, o primeiro quadro caiu de c
 
 </details>
 
-## 💛 Créditos
+## Créditos
 
 - A vegetação usa o [EZ-Tree](https://github.com/dgreenheck/ez-tree), de Daniel Greenheck, sob licença MIT. Veja [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 - O retrato do gato e a textura de pelo foram criados especialmente para este jogo.
@@ -129,5 +129,5 @@ Na versão anterior, medida num navegador sem WebGL, o primeiro quadro caiu de c
 
 <div align="center">
 <br>
-<sub>Feito com carinho pela <b>Rova Tech</b> 🐾 · <a href="https://rovatech-git.github.io/rova-tech/">jogar agora</a></sub>
+<sub>Feito com carinho pela <b>Rova Tech</b> · <a href="https://rovatech-git.github.io/rova-tech/">jogar agora</a></sub>
 </div>
