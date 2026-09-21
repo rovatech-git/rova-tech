@@ -1,81 +1,133 @@
-# Rova Tech — jardim 3D com gato branco
+<div align="center">
 
-Código-fonte completo do jogo, agora com árvores ramificadas, folhas recortadas, casca detalhada e grama em 3D. O gato e os objetos mantêm uma direção artística estilizada; esta versão não é fotorrealista.
+# 🐾 Rova Tech
 
-## Rodar no computador
+### Pequenas patas. Grandes descobertas.
 
-Requisito: Node.js 22.13 ou superior. Extraia o ZIP e abra um terminal dentro da pasta `rova-tech`.
+Um jardim ensolarado, doze peixinhos escondidos e um gato branco muito curioso.
+Um joguinho 3D para jogar no navegador, sem instalar nada e sem pressa.
+
+**[▶️ Jogar agora](https://rovatech-git.github.io/rova-tech/)**
+
+<img src="docs/media/gameplay.gif" alt="O gato branco passeando pelo jardim enquanto a câmera gira ao redor do lago" width="720">
+
+</div>
+
+---
+
+## 🌱 O que é
+
+Você cuida de um gatinho branco de olhos azuis num jardim cheio de árvores, flores, um lago com vitórias-régias e peixinhos dourados espalhados pelo caminho de pedras. A missão é simples: **encontrar os 12 peixinhos**. Não tem limite de tempo nem inimigo. É só explorar no seu ritmo.
+
+Funciona no computador e no celular, direto no navegador.
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/media/tela-inicial.png" alt="Tela inicial com o gato branco em frente ao jardim e o botão Vamos brincar"></td>
+    <td width="50%"><img src="docs/media/partida.png" alt="Partida em andamento, com o contador de peixinhos e o gato perto do lago"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>A aventura começa aqui</sub></td>
+    <td align="center"><sub>“Miau! Seu gato está feliz em explorar com você.”</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/media/camera.png" alt="Vista de cima do jardim, com o caminho de pedras em círculo e os peixinhos dourados"></td>
+    <td align="center"><img src="docs/media/celular.png" alt="Tela inicial no celular" width="220"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Gire a câmera e procure os peixinhos</sub></td>
+    <td align="center"><sub>Também dá para jogar no celular</sub></td>
+  </tr>
+</table>
+
+## 🎮 Como jogar
+
+| Ação | Teclado e mouse | Celular |
+| --- | --- | --- |
+| Andar | <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> ou setas, ou um clique no chão | Setas na tela ou um toque no chão |
+| Pular | <kbd>Espaço</kbd> | Botão **Pular** |
+| Correr | <kbd>Shift</kbd> | — |
+| Miar 🐱 | <kbd>E</kbd> | Botão da patinha |
+| Girar a câmera | Arrastar o mouse | Arrastar o dedo |
+| Zoom | Roda do mouse ou trackpad | — |
+| Restaurar a câmera | <kbd>R</kbd> | Botão no topo |
+| Pausar | <kbd>Esc</kbd> ou <kbd>P</kbd> | Botão no topo |
+
+> 💡 **Dica:** um clique curto move o gato; arrastar só mexe na câmera. O progresso vale para a partida atual e recomeça quando você recarrega a página.
+
+## 🛠️ Rodar no seu computador
+
+Você só precisa do [Node.js](https://nodejs.org/) 22.13 ou mais novo.
 
 ```bash
+git clone https://github.com/rovatech-git/rova-tech.git
+cd rova-tech
 npx pnpm@11.25.0 install
 npx pnpm@11.25.0 dev
 ```
 
-Abra http://localhost:5173 no navegador. A primeira instalação precisa de internet para baixar as dependências. O jogo não exige chave de API.
+Depois abra **http://localhost:5173**. Não precisa de chave de API nem de conta.
 
-## Controles
+## 🧶 Onde mexer
 
-WASD ou setas: andar na direção da câmera. Clique curto no chão: caminhar até o ponto. Arraste com o botão esquerdo ou direito: girar a câmera horizontalmente e ajustar sua inclinação. Roda do mouse ou rolagem do trackpad: aproximar e afastar. R ou botão Restaurar câmera: recuperar a visão inicial. O zoom tem limites e a câmera permanece acima do chão. Espaço: pular. Shift: correr. E: miar. Esc/P: pausar. No celular há controles na tela. Encontre 12 peixes para concluir a partida. O progresso fica na memória da partida e reinicia ao recarregar.
+Quer mudar alguma coisa? Estes são os arquivos principais:
 
-## Onde editar
+| Arquivo | O que tem lá |
+| --- | --- |
+| [`app/world.ts`](app/world.ts) | O coração do jogo: gato, cenário, câmera, animações, colisões e coleta |
+| [`app/page.tsx`](app/page.tsx) | Interface, menus, pontuação e controles na tela |
+| [`app/vegetation.ts`](app/vegetation.ts) | Árvores, arbustos e grama gerados por código |
+| [`app/cat-coat.ts`](app/cat-coat.ts) | Os pelos fofinhos do pescoço e do rabo |
+| [`app/appearance.ts`](app/appearance.ts) | Texturas, orelhas e sombras |
+| [`app/camera-controls.ts`](app/camera-controls.ts) | Zoom, rotação e a diferença entre clique e arraste |
+| [`app/scene-performance.ts`](app/scene-performance.ts) | Truques de desempenho e resolução adaptável |
+| [`app/software-renderer.ts`](app/software-renderer.ts) | Plano B para navegadores sem WebGL2 |
+| [`app/globals.css`](app/globals.css) | Visual da interface e ajustes para celular |
 
-- `app/scene-performance.ts`: agrupamento de objetos fixos e resolução adaptável.
-- `app/camera-controls.ts`: zoom, rotação, limites e distinção entre clique e arraste.
-- `app/world.ts`: gato, cenário, câmera, animação, colisões, movimentação e coleta.
-- `app/cat-coat.ts`: volume arredondado e pelos agrupados do pescoço e do rabo.
-- `app/vegetation.ts`: árvores e arbustos procedurais, folhas, grama curva e sombras de copa.
-- `app/appearance.ts`: texturas procedurais, orelhas curvas, detalhes de pelo e sombras.
-- `app/software-renderer.ts`: renderizador 3D alternativo com buffer de profundidade, luz interpolada e texturas para navegadores sem WebGL2.
-- `app/page.tsx`: interface, menus, pontuação e controles.
-- `app/globals.css`: aparência e adaptação a celular.
-- `public/gato-fur-texture.webp`: textura de pelo criada para este jogo.
-- `public/gato-avatar.webp`: retrato do gato.
+**Feito com:** React, TypeScript, Three.js e Vite.
 
-## Compilar
+## 🚀 Publicação
 
-```bash
-npx pnpm@11.25.0 build
-```
-
-Stack: React, TypeScript, Three.js e Vinext. O projeto mantém os componentes e as configurações do ambiente em que foi criado. Os arquivos do jogo podem ser reutilizados em outro projeto React. A pasta `.openai` identifica apenas a hospedagem deste projeto e não é necessária para jogar localmente.
-
-## Melhorias visuais desta versão
-
-O gato tem cabeça e bochechas arredondadas, barriga e patinhas mais cheias, orelhas menores e pupilas redondas. O pescoço ganhou uma gola de pelos e o rabo tem volume de pluma com ponta curva. Os pelos dessas duas regiões ficam em apenas duas malhas, sem simulação individual por fio nem novas imagens para baixar.
-
-As antigas copas esféricas foram removidas. As árvores usam galhos recursivos e folhas com recorte de transparência, copas assimétricas, texturas de casca e movimento suave. Os arbustos também têm ramos e folhas. A grama usa lâminas curvas reunidas em uma malha, com caminhos livres. Há sombras suaves e irregulares sob as árvores.
-
-O renderizador principal usa WebGL2, luz de ambiente, materiais e sombras. O modo alternativo para dispositivos sem WebGL2 usa as mesmas árvores, texturas, recorte de folhas, cores por vértice e profundidade 3D. Ele oferece iluminação mais simples e pode ter menor desempenho em computadores lentos.
-
-## Validação
-
-Verificação TypeScript e compilação de produção. Revisão visual da tela inicial e da partida com as novas árvores no navegador, usando o modo sem WebGL2 disponível no ambiente de teste. Caminhada por clique, coleta e pausa verificadas nesta revisão. O visual específico de WebGL2 não foi validado neste navegador. WebMCP é opcional.
-
-## Recursos e dependências
-
-Os dois arquivos de imagem foram gerados para o projeto. A vegetação utiliza [EZ-Tree](https://github.com/dgreenheck/ez-tree), de Daniel Greenheck, sob licença MIT; consulte `THIRD_PARTY_NOTICES.md`. As dependências de terceiros mantêm suas respectivas licenças. O pacote não inclui node_modules, credenciais, configurações pessoais nem histórico Git.
-
-## Câmera e desempenho
-
-O mouse permite zoom e rotação com transição suave. Um clique curto move o gato; arrastar muda somente a câmera. O teclado acompanha a orientação da câmera.
-
-Objetos repetidos do jardim são agrupados por geometria e material no WebGL. Sombras fixas são calculadas uma vez, com atualização quando as texturas terminam de carregar. A densidade de pixels se adapta automaticamente à carga da GPU, mantendo modelos, texturas e antialiasing. As duas imagens do gato usam WebP sem perdas, com os mesmos pixels dos arquivos originais.
-
-No renderizador sem WebGL, o cenário fixo é reutilizado quando a câmera está parada. Durante o movimento, a resolução interna é reduzida temporariamente, com retorno à resolução maior ao parar; as malhas pequenas usam detalhe proporcional ao tamanho na tela. As copas continuam com galhos e folhas recortadas.
-
-Medições da versão anterior no navegador de teste sem WebGL: a renderização inicial passou de cerca de 222 ms para 27 ms por quadro; com a câmera parada, chegou a cerca de 16 ms. Durante uma caminhada longa, o custo caiu de cerca de 204 ms para 94 ms por quadro. São tempos de renderização desse ambiente, não uma garantia de FPS em outros dispositivos. A aceleração WebGL não está disponível no navegador de teste.
-
-## GitHub Pages
-
-Esta versão também pode ser publicada como um site estático, sem servidor ou chave de API. A página reutiliza o mesmo jogo e seus controles.
+Cada `push` na branch `main` publica o jogo automaticamente no GitHub Pages, pelo fluxo [`.github/workflows/github-pages.yml`](.github/workflows/github-pages.yml). Para gerar a versão estática na sua máquina:
 
 ```bash
-npx pnpm@11.25.0 install --frozen-lockfile
-npx pnpm@11.25.0 build:pages
+npx pnpm@11.25.0 build:pages   # o resultado fica em dist-pages/
 ```
 
-O resultado fica em `dist-pages/`. Os endereços de imagens e scripts são relativos e funcionam tanto no domínio principal quanto dentro do caminho de um repositório.
+<details>
+<summary><b>✨ Detalhes do visual</b></summary>
 
-O fluxo `.github/workflows/github-pages.yml` compila e publica quando a branch `main` recebe alterações, ou por execução manual. No repositório de destino, configure **Settings → Pages → Source → GitHub Actions**. O arquivo `vite.github-pages.config.ts` não depende da hospedagem original. Não publique `node_modules`, `.env`, `.git` ou pastas de trabalho.
+<br>
 
-Configuração baseada na [documentação oficial do GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+O gato tem cabeça e bochechas arredondadas, barriga e patinhas cheias, orelhas pequenas e pupilas redondas. O pescoço ganhou uma gola de pelos e o rabo parece uma pluma com a ponta curva. Esses pelos ficam em só duas malhas, sem simular cada fio, o que mantém o jogo leve.
+
+As árvores usam galhos recursivos e folhas recortadas, com copas assimétricas, casca texturizada e um balanço suave. A grama é feita de lâminas curvas reunidas numa única malha, e há sombras irregulares sob as copas.
+
+Com WebGL2, o jogo usa luz ambiente, materiais e sombras. Em aparelhos sem WebGL2, entra um renderizador alternativo que mantém as mesmas árvores, texturas e profundidade 3D, com iluminação mais simples.
+
+</details>
+
+<details>
+<summary><b>⚡ Câmera e desempenho</b></summary>
+
+<br>
+
+- Objetos repetidos do jardim são agrupados por geometria e material.
+- Sombras fixas são calculadas uma vez só.
+- A densidade de pixels se ajusta sozinha à carga da GPU, sem perder modelos, texturas nem antialiasing.
+- No modo sem WebGL, o cenário parado é reaproveitado e a resolução cai um pouco só enquanto a câmera se mexe.
+
+Na versão anterior, medida num navegador sem WebGL, o primeiro quadro caiu de cerca de 222 ms para 27 ms, e uma caminhada longa caiu de cerca de 204 ms para 94 ms por quadro. Esses tempos valem para aquele ambiente de teste, não são uma garantia de FPS em outros aparelhos.
+
+</details>
+
+## 💛 Créditos
+
+- A vegetação usa o [EZ-Tree](https://github.com/dgreenheck/ez-tree), de Daniel Greenheck, sob licença MIT. Veja [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+- O retrato do gato e a textura de pelo foram criados especialmente para este jogo.
+- As demais dependências mantêm suas próprias licenças.
+
+<div align="center">
+<br>
+<sub>Feito com carinho pela <b>Rova Tech</b> 🐾 · <a href="https://rovatech-git.github.io/rova-tech/">jogar agora</a></sub>
+</div>
