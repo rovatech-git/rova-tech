@@ -1,7 +1,5 @@
 <div align="center">
 
-# Rova Tech
-
 ### Pequenas patas. Grandes descobertas.
 
 Um jardim ensolarado, doze peixinhos escondidos e um gato branco muito curioso.
