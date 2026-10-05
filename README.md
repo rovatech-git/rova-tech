@@ -64,7 +64,6 @@ npx pnpm@11.25.0 install
 npx pnpm@11.25.0 dev
 ```
 
-Depois abra **http://localhost:5173**. Não precisa de chave de API nem de conta.
 
 ## Onde mexer
 
